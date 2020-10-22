@@ -27,22 +27,68 @@ def button_clear():
 	e.delete(0, END)
 
 
-def button_add():
-	#takes whatever is in the input box
-	first_number = e.get()
-	#put it in a global variable that can then be used in other functions / turns it into a legit integer
-	global f_num
-	f_num = int(first_number)
-	#delete whats currently in the input box
-	e.delete(0, END)
-
 def button_equal():
 	#takes whatever is in the input box
 	second_number = e.get()
 	#deletes whatever is in the input box
 	e.delete(0, END)
-	#adds the first number that is inside the global variable and adds it to the second number
-	e.insert(0, f_num + int(second_number))
+	#does math
+
+	if math == "addition":
+		e.insert(0, f_num + int(second_number))
+	if math == "subtraction":
+		e.insert(0, f_num - int(second_number))
+	if math == "multiplication":
+		e.insert(0, f_num * int(second_number))
+	if math == "division":
+		e.insert(0, f_num / int(second_number))
+	
+
+def button_add():
+	#takes whatever is in the input box
+	first_number = e.get()
+	#put it in a global variable that can then be used in other functions / turns it into a legit integer
+	global f_num
+	global math
+	math = "addition"
+	f_num = int(first_number)
+	#delete whats currently in the input box
+	e.delete(0, END)
+
+def button_subtract():
+	#takes whatever is in the input box
+	first_number = e.get()
+	#put it in a global variable that can then be used in other functions / turns it into a legit integer
+	global f_num
+	global math
+	math = "subtraction"
+	f_num = int(first_number)
+	#delete whats currently in the input box
+	e.delete(0, END)
+
+def button_multiply():
+	#takes whatever is in the input box
+	first_number = e.get()
+	#put it in a global variable that can then be used in other functions / turns it into a legit integer
+	global f_num
+	global math
+	math = "multiplication"
+	f_num = int(first_number)
+	#delete whats currently in the input box
+	e.delete(0, END)
+
+def button_divide():
+	#takes whatever is in the input box
+	first_number = e.get()
+	#put it in a global variable that can then be used in other functions / turns it into a legit integer
+	global f_num
+	global math
+	math = "division"
+	f_num = int(first_number)
+	#delete whats currently in the input box
+	e.delete(0, END)
+
+
 
 #define buttons
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
@@ -56,9 +102,13 @@ button_8 = Button(root, text="8", padx=40, pady=20, command=lambda: button_click
 button_9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
 button_0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 
-button_add = Button(root, text="+", padx=39, pady=20, command=button_add)
-button_equal = Button(root, text="=", padx=91, pady=20, command=button_equal)
-button_clear = Button(root, text="Clear", padx=79, pady=20, command=button_clear)
+button_add = Button(root, text="+", padx=40, pady=20, command=button_add)
+button_equal = Button(root, text="=", padx=89, pady=20, command=button_equal)
+button_clear = Button(root, text="Clear", padx=78, pady=20, command=button_clear)
+
+button_subtract = Button(root, text="-", padx=41, pady=20, command=button_subtract)
+button_multiply = Button(root, text="*", padx=42, pady=20, command=button_multiply)
+button_divide = Button(root, text="/", padx=43, pady=20, command=button_divide)
 
 
 #put the buttons on the screen
@@ -79,43 +129,12 @@ button_clear.grid(row=4,column=1,columnspan=2)
 button_add.grid(row=5,column=0)
 button_equal.grid(row=5,column=1,columnspan=2)
 
+button_subtract.grid(row=6,column=0)
+button_multiply.grid(row=6,column=1)
+button_divide.grid(row=6,column=2)
 
 
 
 #GUI is always looping
 root.mainloop()
 
-
-
-# #creating label widget
-# myLabel1 = Label(root, text="Hello World!")
-# myLabel2 = Label(root, text="My name is Tom")
-# #shoving it onto the screen
-# myLabel1.grid(row=0, column=0)
-# myLabel2.grid(row=1, column=0)
-
-
-
-
-# root.geometry("200x150")
-# frame = Frame(root)
-# frame.pack()
- 
-# leftframe = Frame(root)
-# leftframe.pack(side=LEFT)
- 
-# rightframe = Frame(root)
-# rightframe.pack(side=RIGHT)
- 
-# label = Label(frame, text = "Hello world")
-# label.pack()
- 
-# button1 = Button(leftframe, text = "Button1")
-# button1.pack(padx = 3, pady = 3)
-# button2 = Button(rightframe, text = "Button2")
-# button2.pack(padx = 3, pady = 3)
-# button3 = Button(leftframe, text = "Button3")
-# button3.pack(padx = 3, pady = 3)
- 
-# root.title("Test")
-# root.mainloop()
