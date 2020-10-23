@@ -1,2 +1,2 @@
 # baby-calculator
-Super simple calculator that only does addition. 
+Super simple calculator
